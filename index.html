@@ -14,42 +14,51 @@
  <!-- font awsome cdn -->
 
 </head>
+
+
 <body>
     <header>
-        <section class="w-full h-[90px] text-white flex justify-between pr-16 pl-26 border-lime-200 bg-green-700">
-          <div class="navbar">
-  <div class="navbar-start">
-    <div class="dropdown">
-      <!-- <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
-      </div> -->
-      
+         <section class="w-full h-auto lg:h-[90px] text-white bg-green-700">
+  <div class="navbar px-4 lg:px-14">
+    <div class="navbar-start">
+      <a class="btn btn-ghost !text-xl">Green Earth</a>
     </div>
-    
-    <a class="btn btn-ghost !text-xl ">Green Earth</a>
-    
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 space-x-6">
+        <li><a>About</a></li>
+        <li><a>Gallery</a></li>
+        <li><a>Plant a Tree</a></li>
+      </ul>
+    </div>
+
+    <div class="navbar-end">
+      <a class="btn !rounded-3xl !bg-yellow-400">Plant a Tree</a>
+    </div>
+     <div class="lg:hidden ml-auto">
+      <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="btn btn-ghost">
+        ☰
+      </button>
+    </div>
   </div>
-  <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1">
-      <li class=""><a>About</a></li>
-      <li><a>Gallaary</a></li>
+  <div id="mobile-menu" class="hidden lg:hidden bg-green-700 text-center py-2">
+    <ul class="menu menu-vertical space-y-2">
+      <li><a>About</a></li>
+      <li><a>Gallery</a></li>
       <li><a>Plant a Tree</a></li>
     </ul>
   </div>
-  <div class="navbar-end">
-    <a class="btn !rounded-3xl !bg-yellow-400">Plant a Tree</a>
-  </div>
-</div>
 </section>
 
-<section class="h-[380px] flex justify-between pl-28 w-full bg-[#CFF0DC]">
+
+
+
+<section class="h-[380px] flex justify-between pl-10 lg:pl-28 w-full bg-[#CFF0DC]">
 
   <div class="flex justify-between text-center items-center">
 
     <div><img src="./assets/hero-leaf1.png" alt="" srcset=""></div>
     <div>
-      <h1 class="text-4xl font-bold">Plant a Tree, Grow a Future</h1>
+      <h1 class="marker:text-2xl w-full lg:text-4xl font-bold">Plant a Tree, Grow a Future</h1>
       <p>Join our mission to plant 1 million trees and make the Earth greener for future
 <br>generations.</p>
 <button class=" w-30 h-8 rounded-3xl bg-yellow-400 "><a>Get Involve</a>
@@ -67,33 +76,32 @@
 
 
     <main>
+      <!-- parent all card funtionality-->
       <section class="bg-[#E6F8EE]    w-full h-full"> 
-        <div class=" flex justify-between">
+        <!-- 3 side card parent -->
+        <div class=" flex flex-col md:flex-row justify-between">
 
-          <div id="category-btn" class="w-80 h-[1000px] text-center space-y-10 pt-18 ">
+
+
+<!-- left parent -->
+<div id="category-btn" class="w-full lg:w-80 h-auto text-center space-y-10 pt-18 ">
             <h1 class="text-2xl">Category</h1>
 
-           
+           </div>
+
+
+
+          <!-- middle parent -->
+ <div id="show-category-btn" class="w-full p-3 gap-3 flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 h-full border-2 border-green-400">
+            <div class="w-full col-span-1 md:col-span-3 h-15 ">
+            <h1 class="text-2xl pt-3 text-center">Choose Your Trees</h1>
+            </div>
+          </div>
+
+
           
 
-          </div>
-          <div id="show-category-btn" class="w-[1200px] p-3 gap-3 grid grid-cols-3 h-full border-2 border-green-400">
-
-            <!-- <div class="w-[350px] h-[450px] bg-white rounded-2xl p-3 ">
-            <img class="h-[220px] w-full" src="./assets/about.png" alt="" srcset="">
-            <h1 class="text-2xl">mango tree</h1>
-            <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti eum labore aperiam</p>
-               <div class="flex pl-4 pr-4 justify-between">
-               <button class="w-24 h-8 border-2 rounded-3xl font-semibold border-green-300">fruit tree</button>
-               <h1 class="text-2xl">500$</h1>
-               </div>
-               <div class="pl-5 pt-5">
-               <div class="w-[280px] rounded-3xl bg-green-600 pl-6 h-8 border-2 border-red-500">               
-                <button class="pl-15 ">add to chart</button>
-              </div>
-              </div> -->
-
-          </div>
+          <!-- right parent -->
           <div>
           <div class="w-80 h-[600px] border-2 border-red-500" >
             </div>
