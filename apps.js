@@ -11,30 +11,42 @@ const categoryupload=(categoris)=>{
 
     for(let category of categoris){
         const div=document.createElement("div")
-        div.innerHTML=`<h1><button onclick="btn('${category.id}')" class="hover:bg-green-400">${category.category_name}</button></h1>`
+        div.innerHTML=`<h1><button id="activeclassadd-${category.id}" onclick="btn('${category.id}')" class="hover:bg-green-400  activeclassremuve">${category.category_name}</button></h1>`
         getid.appendChild(div)
     }
 
 }
 categorybtnload()
 
+// active button funtion
+
+const remuve=()=>{
+    const activebtn=document.querySelectorAll(".activeclassremuve")
+    activebtn.forEach(btnbtn=>btnbtn.classList.remove("active"))
+}
 
 
+// btn clicked card show funtion
 
 const btn=(pt)=>{
     const url=`https://openapi.programming-hero.com/api/category/${pt}`
     fetch(url)
     .then(res=>res.json())
-    .then(json=>plantscategory(json.plants)
-    )
+    .then(json=> {
+
+        const btnactive=document.getElementById(`activeclassadd-${pt}`)
+        btnactive.classList.add("active")
+
+        
+        
+        plantscategory(json.plants)
+
+    })
+    remuve()
 
 }
 
 const plantscategory=(plantss)=>{
-    
-// btn clicked card show funtion
-
-
     const element=document.getElementById("display-auto")
 
     element.innerHTML=""
@@ -50,15 +62,14 @@ const plantscategory=(plantss)=>{
             <p class="text-xl md:text-xl pl-2">${plant.description}</p>
             </div>
                <div class="flex pl-4 pr-12 justify-between">
-               <button class="w-40 h-8 border-2 rounded-3xl
-               font-semibold border-green-300 text-sm md:text-base">${plant.category}</button>
-               <h1 class="text-2xl">${plant.price}</h1>
+               <button class="w-40 h-8  rounded-3xl font-semibold bg-green-300 text-sm md:text-base">${plant.category}</button>
+               <h1 class="text-2xl"><i class="fa-solid fa-bangladeshi-taka-sign"></i>${plant.price}</h1>
                </div>
                </div>
                <div class="pl-5 pt-5">
-               <div class="w-full lg:w-[280px] rounded-3xl bg-green-600 pl-6
+               <div class="w-full lg:w-[325px] rounded-3xl bg-green-600 pl-6
                 h-8 border-2 border-red-500">               
-                <button class="pl-15 mt-auto ">add to chart</button>
+                <button class="pl-25 mt-auto ">add to chart</button>
               </div>
               </div>`
 
@@ -95,12 +106,12 @@ const allcategoryload = (loads) => {
               <p class="text-base md:text-lg pl-2">${load.description}</p>
             </div>
             <div class="flex pl-4  pr-12 justify-between items-center ">
-              <button class="px-4 py-1 border-2 rounded-3xl font-semibold border-green-300 text-sm md:text-base">${load.category}</button>
+              <button class="px-4 py-1  rounded-3xl bg-green-300 font-semibold text-sm md:text-base">${load.category}</button>
               <h1 class="text-xl font-bold text-green-700">$${load.price}</h1>
             </div>
           </div>
           <div class="pl-5 pt-5">
-            <button class="w-full lg:w-[280px]  rounded-3xl bg-green-600 text-white py-2 hover:bg-green-700 transition">
+            <button class="w-full lg:w-[325px]  rounded-3xl bg-green-600 text-white py-2 hover:bg-green-700 transition">
               Add to cart
             </button>
           </div>
