@@ -1,3 +1,7 @@
+
+let cart={};
+
+
 // category button load section
 
 const categorybtnload=()=>{
@@ -69,6 +73,7 @@ const btn=(pt)=>{
     fetch(url)
     .then(res=>res.json())
     .then(json=> {
+      remuve()
 
         const btnactive=document.getElementById(`activeclassadd-${pt}`)
         btnactive.classList.add("active")
@@ -94,7 +99,7 @@ const plantscategory=(plantss)=>{
         <div class="h-[440px]">
         
             <img class="h-[260px] w-full" src="${plant.image}"alt="${plant.name}"">
-            <h1 <button class="btn text-2xl" onclick="loadwordetails('${plant.id}')"></button>${plant.name}</h1>
+            <h1> <button class="btn text-2xl" onclick="loadwordetails('${plant.id}')"></button>${plant.name}</h1>
             <p class="text-xl md:text-xl pl-2">${plant.description}</p>
             </div>
                <div class="flex pl-4 pr-12 justify-between">
@@ -105,13 +110,60 @@ const plantscategory=(plantss)=>{
                <div class="pl-5 pt-5">
                <div class="w-full lg:w-[325px] rounded-3xl bg-green-600 pl-6
                 h-8 border-2 border-red-500">               
-                <button class="pl-25 mt-auto ">add to chart</button>
+                <button onclick="addToChart('${plant.id}', '${plant.name}', ${plant.price})" class="pl-25 mt-auto ">add to chart</button>
               </div>
               </div>`
 
               element.appendChild(div)
         
     }
+
+}
+
+
+// chart show funtion
+
+function addToChart(id, name, price) {
+  alert(`${name} added to chart`);
+  if(cart[id]){
+    cart[id].qty +=1;
+  }
+  else{
+    cart[id]={id, name, price, qty: 1};
+  }
+
+  renderCart();
+  
+}
+
+function renderCart() {
+  const cartBody=document.getElementById("card-body");
+  cartBody.innerHTML=""
+
+  let grandTotal=0
+  Object.values(cart).forEach(item=>{
+    const total=item.price * item.qty;
+    grandTotal+=total;
+
+    const row=document.createElement("tr");
+    row.innerHTML=`
+    <tbody class="h-10 w-[100px] space-y-6 border-2 border-red-600 bg-gray-700">
+    <td>${item.name}</td>
+     <td>${item.qty}</td>
+      <td>${item.price}</td>
+       <td>${total}</td>
+       <td><button onclick="removeFromCart('${item.id}')">❌</button></td>
+       </tbody>
+    `;
+    cartBody.appendChild(row)
+  })
+  document.getElementById("grand-total").innerHTML=`Grand Total:${grandTotal}`
+  
+}
+
+function removeFromCart(id){
+  delete cart[id];
+  renderCart()
 
 }
 
