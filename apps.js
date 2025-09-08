@@ -15,7 +15,7 @@ const categoryupload=(categoris)=>{
 
     for(let category of categoris){
         const div=document.createElement("div")
-        div.innerHTML=`<h1><button id="activeclassadd-${category.id}" onclick="btn('${category.id}')" class="hover:bg-green-400  text-xl activeclassremuve">${category.category_name}</button></h1>`
+        div.innerHTML=`<h1><button id="activeclassadd-${category.id}" onclick="btn('${category.id}')" class="hover:bg-green-200  text-xl activeclassremuve">${category.category_name}</button></h1>`
         getid.appendChild(div)
     }
 
@@ -112,7 +112,7 @@ const plantscategory=(plantss)=>{
                <div class="pl-5 pt-5">
                <div onclick="addToChart('${plant.id}', '${plant.name}', ${plant.price})" class="w-full lg:w-[325px] rounded-3xl bg-green-600 pl-6
                 h-12  hover:bg-green-700 transition">               
-                <button class="text-center text-xl mt-auto pl-20 pt-1 text-white  ">add to chart</button>
+                <button class="text-center text-xl mt-auto pl-20 pt-2 text-white  ">add to chart</button>
               </div>
               </div>`
 
@@ -149,7 +149,7 @@ function renderCart() {
 
     const row=document.createElement("tr");
     row.innerHTML=`
-              <div class="flex justify-between w-[280px] h-18 mb-4 p-3 rounded-2xl  bg-[#E6F8EE]">
+              <div class="flex justify-between w-[360px] md:w-[280px] h-18 mb-4 p-3 rounded-2xl  bg-[#E6F8EE]">
                 <div>
               <h2 class="text-2xl">${item.name}</h2>
               <div class="flex space-x-5">
@@ -207,7 +207,7 @@ const allcategoryload = (loads) => {
             </div>
           </div>
           <div class="pl-5 pt-5">
-            <button class="w-full lg:w-[325px]  rounded-3xl bg-green-600 text-white py-2 hover:bg-green-700 transition">
+            <button onclick="addToChart('${load.id}', '${load.name}', ${load .price})" class="w-full lg:w-[325px]  rounded-3xl bg-green-600 text-white py-2 hover:bg-green-700 transition">
               Add to cart
             </button>
           </div>
