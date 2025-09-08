@@ -25,6 +25,42 @@ const remuve=()=>{
     activebtn.forEach(btnbtn=>btnbtn.classList.remove("active"))
 }
 
+// modal load word details
+
+const loadwordetails=(id)=>{
+
+  const url=`https://openapi.programming-hero.com/api/plant/${id}`
+
+  fetch(url)
+  .then(res=>res.json())
+  .then(card=>carddetailsshow(card.plants)
+  )
+
+}
+const carddetailsshow=(infos)=>{
+  const cardinfo=document.getElementById("card-info")
+  cardinfo.innerHTML=""
+  cardinfo.innerHTML=`<div class="w-full md:w-[450px] h-auto flex flex-col gap-y-4  bg-white rounded-4xl pb-3 ">
+        <div class="h-[480px]">
+        <div class="h-[440px]">
+          <h1 class="text-lg md:text-2xl pl-2 font-bold">${infos.name}</h1>
+            <img class="h-[280px] w-[450px]" src="${infos.image}"alt="${infos.name}"">
+            
+               <button class="  "> <span class="font-semibold">Category:</span> ${infos.category}</button>
+               <h1 class="text-2xl"><span class="font-semibold">Price:</span><i class="fa-solid fa-bangladeshi-taka-sign"></i>${infos.price}</h1>
+               
+            <p class="text-xl md:text-xl pl-2"><span class="font-semibold">Discription:</span> ${infos.description}</p>
+            </div>
+              
+               </div>
+               `
+
+  document.getElementById("my_modal_5").showModal()
+
+
+
+}
+
 
 // btn clicked card show funtion
 
@@ -54,11 +90,11 @@ const plantscategory=(plantss)=>{
     for(let plant of plantss){
         const div=document.createElement("div")
         div.innerHTML=`<div class="w-full md:w-[380px] h-auto flex flex-col  bg-white rounded-4xl pb-3 ">
-        <div class="h-[420px]">
-        <div class="h-[400px]">
+        <div class="h-[480px]">
+        <div class="h-[440px]">
         
-            <img class="h-[220px] w-full" src="${plant.image}"alt="${plant.name}"">
-            <h1 class="text-lg md:text-2xl pl-2">${plant.name}</h1>
+            <img class="h-[260px] w-full" src="${plant.image}"alt="${plant.name}"">
+            <h1 <button class="btn text-2xl" onclick="loadwordetails('${plant.id}')"></button>${plant.name}</h1>
             <p class="text-xl md:text-xl pl-2">${plant.description}</p>
             </div>
                <div class="flex pl-4 pr-12 justify-between">
