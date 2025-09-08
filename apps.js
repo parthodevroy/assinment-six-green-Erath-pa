@@ -64,11 +64,25 @@ const carddetailsshow=(infos)=>{
 
 
 }
+// spiner control funtion
+
+const managespiner=(status)=>{
+  if(status == true){
+    document.getElementById("spiner").classList.remove("hidden");
+    document.getElementById("display-auto").classList.add("hidden");
+  }
+  else{
+    document.getElementById("display-auto").classList.remove("hidden");
+    document.getElementById("spiner").classList.add("hidden");
+
+  }
+}
 
 
 // btn clicked card show funtion
 
 const btn=(pt)=>{
+  managespiner(true)
     const url=`https://openapi.programming-hero.com/api/category/${pt}`
     fetch(url)
     .then(res=>res.json())
@@ -119,6 +133,7 @@ const plantscategory=(plantss)=>{
               element.appendChild(div)
         
     }
+    managespiner(false)
 
 }
 
@@ -149,7 +164,7 @@ function renderCart() {
 
     const row=document.createElement("tr");
     row.innerHTML=`
-              <div class="flex justify-between w-[360px] md:w-[280px] h-18 mb-4 p-3 rounded-2xl  bg-[#E6F8EE]">
+              <div class="flex justify-between w-[300px] md:w-[280px] h-18 mb-4 p-3 rounded-2xl  bg-[#E6F8EE]">
                 <div>
               <h2 class="text-2xl">${item.name}</h2>
               <div class="flex space-x-5">
