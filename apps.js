@@ -111,10 +111,10 @@ const plantscategory=(plantss)=>{
     for(let plant of plantss){
         const div=document.createElement("div")
         div.innerHTML=`<div class="w-full md:w-[380px] h-auto flex flex-col  bg-white rounded-4xl pb-3 ">
-        <div class="h-[480px]">
-        <div class="h-[440px]">
+        <div class="h-[680px]">
+        <div class="h-[650px]">
         
-            <img class="h-[260px] w-full" src="${plant.image}"alt="${plant.name}"">
+            <img class="h-[450px] w-full" src="${plant.image}"alt="${plant.name}"">
              <button class="btn pt-1 text-2xl" onclick="loadwordetails('${plant.id}')">${plant.name}</button>
             <p class="text-xl md:text-xl pl-2">${plant.description}</p>
             </div>
@@ -124,7 +124,7 @@ const plantscategory=(plantss)=>{
                </div>
                </div>
                <div class="pl-5 pt-5">
-               <div onclick="addToChart('${plant.id}', '${plant.name}', ${plant.price})" class="w-full lg:w-[325px] rounded-3xl bg-green-600 pl-6
+               <div onclick="addToChart('${plant.id}', '${plant.name}', ${plant.price})" class="w-full pb-8 lg:w-[325px] rounded-3xl bg-green-600 pl-6
                 h-12  hover:bg-green-700 transition">               
                 <button class="text-center text-xl mt-auto pl-20 pt-2 text-white  ">add to chart</button>
               </div>
