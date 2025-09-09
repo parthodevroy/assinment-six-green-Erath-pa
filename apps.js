@@ -110,7 +110,7 @@ const plantscategory=(plantss)=>{
 
     for(let plant of plantss){
         const div=document.createElement("div")
-        div.innerHTML=`<div class="w-full md:w-[300px] h-auto flex flex-col  bg-white rounded-4xl pb-3 ">
+        div.innerHTML=`<div class="w-full md:w-[280px] h-auto flex flex-col  bg-white rounded-4xl pb-3 ">
         <div class="h-[680px]">
         <div class="h-[660px]">
         
@@ -209,7 +209,7 @@ const allcategoryload = (loads) => {
       const div = document.createElement("div");
       div.innerHTML = `
       
-          <div class="w-full md:w-[300px] h-auto flex flex-col bg-white rounded-4xl shadow-md pb-3">
+          <div class="w-full md:w-[280px] h-auto flex flex-col bg-white rounded-4xl shadow-md pb-3">
           <div class="h-[450px]">
             <div class="h-[420px]">
               <img class="h-[220px] w-full object-cover rounded-t-2xl" src="${load.image}" alt="${load.name}">
