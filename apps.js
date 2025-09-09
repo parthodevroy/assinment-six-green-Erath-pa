@@ -110,21 +110,21 @@ const plantscategory=(plantss)=>{
 
     for(let plant of plantss){
         const div=document.createElement("div")
-        div.innerHTML=`<div class="w-full md:w-[380px] h-auto flex flex-col  bg-white rounded-4xl pb-3 ">
+        div.innerHTML=`<div class="w-full md:w-[300px] h-auto flex flex-col  bg-white rounded-4xl pb-3 ">
         <div class="h-[680px]">
-        <div class="h-[650px]">
+        <div class="h-[660px]">
         
             <img class="h-[450px] w-full" src="${plant.image}"alt="${plant.name}"">
              <button class="btn pt-1 text-2xl" onclick="loadwordetails('${plant.id}')">${plant.name}</button>
-            <p class="text-xl md:text-xl pl-2">${plant.description}</p>
+            <p class="text-xl md:text-xls pl-2">${plant.description}</p>
             </div>
-               <div class="flex pl-4 pr-12 justify-between">
+               <div class="flex pl-4 pr-6 justify-between">
                <button class="w-40 h-8  rounded-3xl font-semibold bg-green-300 text-sm md:text-base">${plant.category}</button>
                <h1 class="text-2xl"><i class="fa-solid fa-bangladeshi-taka-sign"></i>${plant.price}</h1>
                </div>
                </div>
                <div class="pl-5 pt-5">
-               <div onclick="addToChart('${plant.id}', '${plant.name}', ${plant.price})" class="w-full pb-8 lg:w-[325px] rounded-3xl bg-green-600 pl-6
+               <div onclick="addToChart('${plant.id}', '${plant.name}', ${plant.price})" class="w-full pb-8 lg:w-[250px] rounded-3xl bg-green-600 pl-6
                 h-12  hover:bg-green-700 transition">               
                 <button class="text-center text-xl mt-auto pl-20 pt-2 text-white  ">add to chart</button>
               </div>
@@ -209,9 +209,9 @@ const allcategoryload = (loads) => {
       const div = document.createElement("div");
       div.innerHTML = `
       
-          <div class="w-full md:w-[380px] h-auto flex flex-col bg-white rounded-4xl shadow-md pb-3">
-          <div class="h-[420px]">
-            <div class="h-[400px]">
+          <div class="w-full md:w-[300px] h-auto flex flex-col bg-white rounded-4xl shadow-md pb-3">
+          <div class="h-[450px]">
+            <div class="h-[420px]">
               <img class="h-[220px] w-full object-cover rounded-t-2xl" src="${load.image}" alt="${load.name}">
               <h1 class="text-lg md:text-2xl pl-2 font-bold">${load.name}</h1>
               <p class="text-base md:text-lg pl-2">${load.description}</p>
@@ -222,7 +222,7 @@ const allcategoryload = (loads) => {
             </div>
           </div>
           <div class="pl-5 pt-5">
-            <button onclick="addToChart('${load.id}', '${load.name}', ${load .price})" class="w-full lg:w-[325px]  rounded-3xl bg-green-600 text-white py-2 hover:bg-green-700 transition">
+            <button onclick="addToChart('${load.id}', '${load.name}', ${load .price})" class="w-full lg:w-[250px]  rounded-3xl bg-green-600 text-white py-2 hover:bg-green-700 transition">
               Add to cart
             </button>
           </div>
