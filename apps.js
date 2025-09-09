@@ -123,10 +123,10 @@ const plantscategory=(plantss)=>{
                <h1 class="text-2xl"><i class="fa-solid fa-bangladeshi-taka-sign"></i>${plant.price}</h1>
                </div>
                </div>
-               <div class="pl-5 pt-5">
+               <div class=" p-2 md:pl-5 pt-5">
                <div onclick="addToChart('${plant.id}', '${plant.name}', ${plant.price})" class="w-full pb-8 lg:w-[200px] rounded-3xl bg-green-600 pl-6
                 h-12  hover:bg-green-700 transition">               
-                <button class="text-center text-xl mt-auto pl-16 md:pl-7 pt-2 text-white  ">add to chart</button>
+                <button class="text-center text-xl mt-auto pl-17 md:pl-7 pt-2 text-white  ">add to chart</button>
               </div>
               </div>`
 
@@ -221,7 +221,7 @@ const allcategoryload = (loads) => {
               <h1 class="text-xl font-bold text-green-700">$${load.price}</h1>
             </div>
           </div>
-          <div class="pl-5 pt-5">
+          <div class=" p-2 md:pl-5 pt-5">
             <button onclick="addToChart('${load.id}', '${load.name}', ${load .price})" class="w-full lg:w-[200px]  rounded-3xl bg-green-600 text-white py-2 hover:bg-green-700 transition">
               Add to cart
             </button>
