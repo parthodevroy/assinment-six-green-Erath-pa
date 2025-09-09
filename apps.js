@@ -111,12 +111,12 @@ const plantscategory=(plantss)=>{
     for(let plant of plantss){
         const div=document.createElement("div")
         div.innerHTML=`<div class="w-full md:w-[240px] h-auto flex flex-col  bg-white rounded-4xl pb-3 ">
-        <div class="h-[680px]">
-        <div class="h-[660px]">
+        <div class="h-[640px]">
+        <div class="h-[620px]">
         
             <img class="h-[450px] w-full" src="${plant.image}"alt="${plant.name}"">
              <button class="btn pt-1 text-2xl" onclick="loadwordetails('${plant.id}')">${plant.name}</button>
-            <p class="text-xs md:text-xs pl-2">${plant.description}</p>
+            <p class="text-xs md:text-xs pt-4 pl-2">${plant.description}</p>
             </div>
                <div class="flex pl-3 pr-3 justify-between">
                <button class="w-30 h-8  rounded-3xl font-semibold bg-green-300 text-sm md:text-xs">${plant.category}</button>
@@ -210,11 +210,11 @@ const allcategoryload = (loads) => {
       div.innerHTML = `
       
           <div class="w-full md:w-[240px] h-auto flex flex-col bg-white rounded-4xl shadow-md pb-3">
-          <div class="h-[450px]">
-            <div class="h-[420px]">
+          <div class="h-[420px]">
+            <div class="h-[400px]">
               <img class="h-[220px] w-full object-cover rounded-t-2xl" src="${load.image}" alt="${load.name}">
               <h1 class="text-lg md:text-2xl pl-2 font-bold">${load.name}</h1>
-              <p class="text-base md:text-xs pl-2">${load.description}</p>
+              <p class="text-base md:text-xs pt-4 pl-2">${load.description}</p>
             </div>
             <div class="flex pl-4  pr-12 justify-between items-center ">
               <button class="px-4 py-1  rounded-3xl bg-green-300 font-semibold text-sm md:text-xs">${load.category}</button>
